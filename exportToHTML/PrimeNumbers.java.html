@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>PrimeNumbers.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #808080; font-style: italic;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PrimeNumbers.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import static </span>jdk.nashorn.internal.objects.NativeString.substring;
+
+<span class="s0">public class </span>PrimeNumbers {
+    <span class="s0">public static void </span>main(String[] args) {
+        <span class="s0">int </span>n;
+        n = Integer.parseInt(args[<span class="s2">0</span>]);
+<span class="s3">//            if (n&lt;3){</span>
+<span class="s3">//                System.out.println(n);</span>
+<span class="s3">//            }</span>
+<span class="s3">//            else{</span>
+<span class="s3">//                System.out.println( &quot;n is larger than 3&quot;);</span>
+<span class="s3">//</span>
+<span class="s3">//            }</span>
+        <span class="s0">int</span>[] primes = <span class="s0">new int</span>[n + <span class="s2">1</span>];
+        <span class="s0">int </span>number_of_primes = <span class="s2">0</span>;
+        <span class="s0">for </span>(<span class="s0">int </span>x = <span class="s2">2</span>; x &lt;= <span class="s2">1000</span>; x++) {
+
+            <span class="s0">for </span>(<span class="s0">int </span>j = <span class="s2">0</span>; j &lt;= number_of_primes; j++) {
+                <span class="s0">if </span>(j == number_of_primes) {
+                    primes[number_of_primes] = x;
+                    number_of_primes++;
+                    <span class="s0">break</span>;
+                }
+                <span class="s0">if </span>(x % primes[j] == <span class="s2">0</span>) {
+                    <span class="s0">break</span>;
+                }
+<span class="s3">//                        System.out.print(x);</span>
+                <span class="s3">//Same thing as System.out.println(primes[j]);</span>
+<span class="s3">//                        if(j != n-1) {</span>
+<span class="s3">//                            System.out.print(&quot;, &quot;);</span>
+<span class="s3">//                        }</span>
+            }
+            <span class="s0">if </span>(number_of_primes &gt; n) {
+                <span class="s0">break</span>;
+            }
+        }
+
+        <span class="s0">for </span>(<span class="s0">int </span>i = <span class="s2">0</span>; i &lt; n; i++) {
+            System.out.print(primes[i]);
+            System.out.print(<span class="s4">&quot;, &quot;</span>)
+
+<span class="s3">//            System.out.println(tab[]);</span>
+<span class="s3">//            for(int i=0;i&lt;=n;i=i+1){</span>
+<span class="s3">//                System.out.println(i);</span>
+<span class="s3">//                if (i%2 == 1) {</span>
+<span class="s3">//                    System.out.println(i);</span>
+<span class="s3">//                }</span>
+<span class="s3">//            }</span>
+
+        }
+    }
+}</pre>
+</body>
+</html>
